@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <com.by.hitchart.ChartView
+    <com.by.heatchart.ChartView
             android:id="@+id/topChartView"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -24,7 +24,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.15"/>
 
-    <com.by.hitchart.ChartView
+    <com.by.heatchart.ChartView
             android:layout_margin="8dp"
             android:layout_width="0dp"
             android:layout_height="0dp"

@@ -1,4 +1,4 @@
-package com.by.hitchart;
+package com.by.heatchart;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

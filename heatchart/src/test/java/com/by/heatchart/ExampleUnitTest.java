@@ -1,4 +1,4 @@
-package com.by.hitchart;
+package com.by.heatchart;
 
 import org.junit.Test;
 

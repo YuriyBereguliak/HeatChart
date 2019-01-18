@@ -1,12 +1,12 @@
-package com.by.hitchart
+package com.by.heatchart
 
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
-import com.by.hitchart.data.DrawRangeData
-import com.by.hitchart.manager.chart.ChartManager
-import com.by.hitchart.manager.chart.HeatChartManager
+import com.by.heatchart.data.DrawRangeData
+import com.by.heatchart.manager.chart.ChartManager
+import com.by.heatchart.manager.chart.HeatChartManager
 
 /**
  * HeatChart

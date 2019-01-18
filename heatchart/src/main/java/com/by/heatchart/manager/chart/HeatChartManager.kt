@@ -1,9 +1,9 @@
-package com.by.hitchart.manager.chart
+package com.by.heatchart.manager.chart
 
 import android.content.Context
-import com.by.hitchart.data.HeatChart
-import com.by.hitchart.manager.draw.DrawManager
-import com.by.hitchart.manager.draw.HeatDrawManager
+import com.by.heatchart.data.HeatChart
+import com.by.heatchart.manager.draw.DrawManager
+import com.by.heatchart.manager.draw.HeatDrawManager
 
 /**
  * HeatChart

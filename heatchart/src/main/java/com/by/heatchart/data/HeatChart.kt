@@ -1,4 +1,4 @@
-package com.by.hitchart.data
+package com.by.heatchart.data
 
 /**
  * HeatChart

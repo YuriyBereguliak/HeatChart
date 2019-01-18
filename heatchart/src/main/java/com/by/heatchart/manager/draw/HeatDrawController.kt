@@ -1,4 +1,4 @@
-package com.by.hitchart.manager.draw
+package com.by.heatchart.manager.draw
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,8 +6,8 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.RectF
 import android.support.v4.content.ContextCompat
-import com.by.hitchart.R
-import com.by.hitchart.data.HeatChart
+import com.by.heatchart.R
+import com.by.heatchart.data.HeatChart
 
 /**
  * HeatChart

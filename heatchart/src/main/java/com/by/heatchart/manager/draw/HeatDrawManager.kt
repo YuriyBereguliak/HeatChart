@@ -1,8 +1,8 @@
-package com.by.hitchart.manager.draw
+package com.by.heatchart.manager.draw
 
 import android.content.Context
 import android.graphics.Canvas
-import com.by.hitchart.data.HeatChart
+import com.by.heatchart.data.HeatChart
 
 /**
  * HeatChart

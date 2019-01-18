@@ -2,7 +2,7 @@ package com.bereguliak.yuriy.hitchart
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.by.hitchart.data.DrawRangeData
+import com.by.heatchart.data.DrawRangeData
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
