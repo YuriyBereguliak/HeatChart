@@ -2,5 +2,6 @@
 <resources>
     <color name="gray_400">#BDBDBD</color>
 
-    <color name="blue">#406dbef4</color> <!-- 50% opacity -->
+    <color name="blue">#406dbef4</color>        <!-- 50% opacity -->
+    <color name="green">#403cb051</color>       <!-- 50% opacity -->
 </resources>

@@ -15,7 +15,7 @@ import com.by.heatchart.data.HeatChart
  */
 class HeatDrawController(
     context: Context,
-    private var data: HeatChart
+    private var heatChart: HeatChart
 ) {
 
     private var framePaint: Paint
@@ -48,16 +48,16 @@ class HeatDrawController(
         val rect = Rect()
         rect.top = 0
         rect.left = 0
-        rect.right = data.width
-        rect.bottom = data.height
+        rect.right = heatChart.width
+        rect.bottom = heatChart.height
 
         canvas.drawRect(rect, framePaint)
     }
 
     private fun drawData(canvas: Canvas) {
-        val minPartWidth = data.calculateMinPart()
+        val minPartWidth = heatChart.calculateMinPart()
 
-        data.rangeData.forEach { rangeData ->
+        heatChart.dataSet.rangeData.forEach { rangeData ->
             val left = rangeData.startPoint * minPartWidth
             val right = rangeData.endPoint * minPartWidth
 
@@ -65,7 +65,7 @@ class HeatDrawController(
             rect.left = left
             rect.top = 0f
             rect.right = right
-            rect.bottom = data.height.toFloat()
+            rect.bottom = heatChart.height.toFloat()
 
             if (rangeData.isColorValid()) {
                 rangePaint.color = rangeData.rangeColor

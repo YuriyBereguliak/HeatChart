@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
-import com.by.heatchart.data.DrawRangeData
+import com.by.heatchart.data.HeatChartDataSet
 import com.by.heatchart.manager.chart.ChartManager
 import com.by.heatchart.manager.chart.HeatChartManager
 
@@ -36,9 +36,9 @@ class ChartView(context: Context, attrs: AttributeSet? = null) : View(context, a
     //endregion
 
     //region ChartView
-    fun setChartData(data: MutableList<DrawRangeData>) {
+    fun setChartData(dataSet: HeatChartDataSet) {
         post {
-            chartManager.chartData().rangeData = data
+            chartManager.chartData().dataSet = dataSet
         }
     }
     //endregion

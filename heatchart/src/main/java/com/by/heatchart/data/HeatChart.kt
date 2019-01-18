@@ -7,11 +7,13 @@ package com.by.heatchart.data
 data class HeatChart(
     var width: Int = 0,
     var height: Int = 0,
-    var parts: Float = 100.0f,
-    var rangeData: MutableList<DrawRangeData> = mutableListOf()
+    var backgroundColor: Int = -1,
+    var dataSet: HeatChartDataSet = HeatChartDataSet()
 ) {
 
     //region HeatChart
-    fun calculateMinPart(): Float = width / parts
+    fun isBackgroundColorValid() = backgroundColor != -1
+
+    fun calculateMinPart(): Float = width / dataSet.parts
     //endregion
 }

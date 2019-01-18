@@ -4,9 +4,9 @@ package com.by.heatchart.data
  * HeatChart
  * Created by Yuriy Bereguliak on 1/18/19.
  */
-data class DrawRangeData(val startPoint: Int, val endPoint: Int, val rangeColor: Int = -1) {
+data class HeatChartEntry(val startPoint: Int, val endPoint: Int, val rangeColor: Int = -1) {
 
-    //region DrawRangeData
+    //region HeatChartEntry
     fun isColorValid() = rangeColor != -1
     //endregion
 }
