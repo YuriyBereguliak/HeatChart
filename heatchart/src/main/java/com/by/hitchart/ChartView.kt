@@ -37,7 +37,9 @@ class ChartView(context: Context, attrs: AttributeSet? = null) : View(context, a
 
     //region ChartView
     fun setChartData(data: MutableList<DrawRangeData>) {
-        chartManager.chartData().rangeData = data
+        post {
+            chartManager.chartData().rangeData = data
+        }
     }
     //endregion
 }

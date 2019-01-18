@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import android.graphics.RectF
 import android.support.v4.content.ContextCompat
 import com.by.hitchart.R
 import com.by.hitchart.data.HeatChart
@@ -38,6 +39,7 @@ class HeatDrawController(
     //region HeatDrawController
     fun draw(canvas: Canvas) {
         drawFrame(canvas)
+        drawData(canvas)
     }
     //endregion
 
@@ -50,6 +52,27 @@ class HeatDrawController(
         rect.bottom = data.height
 
         canvas.drawRect(rect, framePaint)
+    }
+
+    private fun drawData(canvas: Canvas) {
+        val minPartWidth = data.calculateMinPart()
+
+        data.rangeData.forEach { rangeData ->
+            val left = rangeData.startPoint * minPartWidth
+            val right = rangeData.endPoint * minPartWidth
+
+            val rect = RectF()
+            rect.left = left
+            rect.top = 0f
+            rect.right = right
+            rect.bottom = data.height.toFloat()
+
+            if (rangeData.isColorValid()) {
+                rangePaint.color = rangeData.rangeColor
+            }
+
+            canvas.drawRect(rect, rangePaint)
+        }
     }
     //endregion
 }

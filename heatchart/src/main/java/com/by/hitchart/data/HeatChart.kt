@@ -7,6 +7,11 @@ package com.by.hitchart.data
 data class HeatChart(
     var width: Int = 0,
     var height: Int = 0,
-    var parts: Int = 100,
+    var parts: Float = 100.0f,
     var rangeData: MutableList<DrawRangeData> = mutableListOf()
-)
+) {
+
+    //region HeatChart
+    fun calculateMinPart(): Float = width / parts
+    //endregion
+}
