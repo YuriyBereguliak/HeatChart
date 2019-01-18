@@ -1,5 +1,4 @@
-# Project Title
-HeatChart
+# HeatChart
 
 ## Getting Started
 
