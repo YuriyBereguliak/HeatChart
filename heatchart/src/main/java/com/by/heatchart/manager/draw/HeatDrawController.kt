@@ -57,6 +57,7 @@ class HeatDrawController(
     private fun drawData(canvas: Canvas) {
         val minPartWidth = heatChart.calculateMinPart()
 
+        // Draw ranges from data set
         heatChart.dataSet.rangeData.forEach { rangeData ->
             val left = rangeData.startPoint * minPartWidth
             val right = rangeData.endPoint * minPartWidth
@@ -72,6 +73,11 @@ class HeatDrawController(
             }
 
             canvas.drawRect(rect, rangePaint)
+        }
+
+        // Find empty ranges and apply color if needed
+        if (!heatChart.isBackgroundColorValid()) {
+            return
         }
     }
     //endregion
