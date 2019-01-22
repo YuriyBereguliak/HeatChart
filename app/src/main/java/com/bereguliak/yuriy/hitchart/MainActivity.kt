@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             add(RangeHeatChartEntry(85, 98))
             add(RangeHeatChartEntry(88, 100))
         }
-        topChartView.setChartData(RangeHeatChartDataSet(rangeData = mutableListFirst))
+        topChartView.dataSet(RangeHeatChartDataSet(rangeData = mutableListFirst))
 
         val mutableListWithColor = mutableListOf<RangeHeatChartEntry>()
         with(mutableListWithColor) {
@@ -44,6 +44,6 @@ class MainActivity : AppCompatActivity() {
         dataSet.rangeData = mutableListWithColor
         dataSet.assignColorToRanges(ContextCompat.getColor(this, R.color.green))
 
-        secondChart.setChartData(dataSet)
+        secondChart.dataSet(dataSet)
     }
 }
