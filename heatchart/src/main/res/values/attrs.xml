@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseChartView">
+        <attr name="chartBackgroundColor" format="color"/>
+        <attr name="chartFrameColor" format="color"/>
+        <attr name="chartSeparatorColor" format="color"/>
+        <attr name="chartColor" format="color"/>
+        <attr name="chartFrameWidth" format="dimension"/>
+        <attr name="chartFrameSeparatorWidth" format="dimension"/>
+    </declare-styleable>
+</resources>
