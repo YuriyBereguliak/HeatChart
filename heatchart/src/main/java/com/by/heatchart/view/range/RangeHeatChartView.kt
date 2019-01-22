@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.AttributeSet
 import com.by.heatchart.core.view.BaseChartView
 import com.by.heatchart.data.range.RangeHeatChartDataSet
-import com.by.heatchart.view.range.manager.RangeHeatDrawManager
 
 /**
  * ChartData

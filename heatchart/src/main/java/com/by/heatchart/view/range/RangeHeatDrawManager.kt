@@ -1,10 +1,10 @@
-package com.by.heatchart.view.range.manager
+package com.by.heatchart.view.range
 
 import android.content.Context
 import android.graphics.Canvas
 import com.by.heatchart.core.manager.BaseDrawManager
 import com.by.heatchart.data.range.RangeHeatChartDataSet
-import com.by.heatchart.view.range.controller.RangeHeatDrawController
+import com.by.heatchart.view.range.RangeHeatDrawController
 
 /**
  * ChartData

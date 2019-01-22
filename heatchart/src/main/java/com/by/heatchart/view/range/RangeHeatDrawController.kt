@@ -1,4 +1,4 @@
-package com.by.heatchart.view.range.controller
+package com.by.heatchart.view.range
 
 import android.content.Context
 import android.graphics.Canvas
