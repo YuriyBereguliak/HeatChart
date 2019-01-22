@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <com.by.heatchart.ChartView
+    <com.by.heatchart.view.RangeHeatChartView
             android:id="@+id/topChartView"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -24,7 +24,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.15"/>
 
-    <com.by.heatchart.ChartView
+    <com.by.heatchart.view.RangeHeatChartView
             android:id="@+id/secondChart"
             android:layout_margin="8dp"
             android:layout_width="0dp"

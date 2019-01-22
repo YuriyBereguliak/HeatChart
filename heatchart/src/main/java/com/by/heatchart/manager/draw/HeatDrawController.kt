@@ -9,37 +9,37 @@ import android.support.v4.content.ContextCompat
 import com.by.heatchart.R
 import com.by.heatchart.data.HeatChart
 
-/**
- * HeatChart
- * Created by Yuriy Bereguliak on 1/18/19.
- */
 class HeatDrawController(
-    context: Context,
+    private var context: Context?,
     private var heatChart: HeatChart
 ) {
 
-    private var framePaint: Paint
-    private var rangePaint: Paint
+    private var framePaint = Paint()
+    private var rangePaint = Paint()
 
     init {
-        val res = context.resources
+        context?.let {
+            val res = it.resources
 
-        framePaint = Paint()
-        framePaint.style = Paint.Style.STROKE
-        framePaint.isAntiAlias = true
-        framePaint.strokeWidth = res.getDimension(R.dimen.frame_line_width)
-        framePaint.color = ContextCompat.getColor(context, R.color.gray_400)
+            framePaint.style = Paint.Style.STROKE
+            framePaint.isAntiAlias = true
+            framePaint.strokeWidth = res.getDimension(R.dimen.frame_line_width)
+            framePaint.color = ContextCompat.getColor(it, R.color.gray_400)
 
-        rangePaint = Paint()
-        rangePaint.style = Paint.Style.FILL
-        rangePaint.isAntiAlias = true
-        rangePaint.color = ContextCompat.getColor(context, R.color.blue)
+            rangePaint.style = Paint.Style.FILL
+            rangePaint.isAntiAlias = true
+            rangePaint.color = ContextCompat.getColor(it, R.color.blue)
+        }
     }
 
     //region HeatDrawController
     fun draw(canvas: Canvas) {
         drawFrame(canvas)
         drawData(canvas)
+    }
+
+    fun release() {
+        context = null
     }
     //endregion
 

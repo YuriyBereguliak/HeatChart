@@ -1,4 +1,4 @@
-package com.by.heatchart.manager.chart
+package com.by.heatchart.core.chart
 
 import com.by.heatchart.data.HeatChart
 import com.by.heatchart.manager.draw.DrawManager
