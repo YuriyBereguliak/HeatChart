@@ -4,8 +4,6 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
-import android.support.v4.content.ContextCompat
-import com.by.heatchart.R
 import com.by.heatchart.core.controller.BaseDrawController
 import com.by.heatchart.data.ChartData
 import com.by.heatchart.data.range.RangeHeatChartDataSet
@@ -19,14 +17,14 @@ class RangeHeatDrawController(context: Context, private var chartData: ChartData
         contextReference.get()?.let {
             rangePaint.style = Paint.Style.FILL
             rangePaint.isAntiAlias = true
-            rangePaint.color = ContextCompat.getColor(it, R.color.blue)
+            rangePaint.color = chartData.chartColor
         }
     }
 
     //region DrawController
     override fun draw(canvas: Canvas, data: RangeHeatChartDataSet) {
-        drawFrame(canvas)
         drawData(canvas, data)
+        drawFrame(canvas)
     }
     //endregion
 

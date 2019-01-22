@@ -14,6 +14,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="8dp"
+            app:chartColor="@color/green"
+            app:chartFrameWidth="@dimen/chart_border_width"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline"/>
 
@@ -29,6 +31,8 @@
             android:layout_margin="8dp"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:chartColor="@color/pink"
+            app:chartFrameWidth="@dimen/chart_border_width"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +50,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
+            app:chartFrameWidth="@dimen/chart_border_width"
+            app:chartFrameSeparatorWidth="@dimen/chart_separator_width"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,7 +1,6 @@
 package com.bereguliak.yuriy.hitchart
 
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.by.heatchart.data.index.IndexHeatChartDataEntry
 import com.by.heatchart.data.index.IndexHeatChartDataSet
@@ -57,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         val dataSet = RangeHeatChartDataSet()
         dataSet.parts = 100f
         dataSet.rangeData = mutableListWithColor
-        dataSet.assignColorToRanges(ContextCompat.getColor(this, R.color.green))
 
         secondChart.dataSet(dataSet)
     }

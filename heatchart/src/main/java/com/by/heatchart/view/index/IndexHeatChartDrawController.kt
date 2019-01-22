@@ -4,8 +4,6 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
-import android.support.v4.content.ContextCompat
-import com.by.heatchart.R
 import com.by.heatchart.core.controller.BaseDrawController
 import com.by.heatchart.data.ChartData
 import com.by.heatchart.data.index.IndexHeatChartDataSet
@@ -22,24 +20,22 @@ class IndexHeatChartDrawController(context: Context, private var chartData: Char
 
     init {
         contextReference.get()?.let {
-            val res = it.resources
-
             borderPaint.style = Paint.Style.STROKE
             borderPaint.isAntiAlias = true
-            borderPaint.strokeWidth = res.getDimension(R.dimen.frame_border_width)
-            borderPaint.color = ContextCompat.getColor(it, R.color.gray_400)
+            borderPaint.strokeWidth = chartData.frameSeparatorWidth
+            borderPaint.color = chartData.separatorColor
 
             rangePaint.style = Paint.Style.FILL
             rangePaint.isAntiAlias = true
-            rangePaint.color = ContextCompat.getColor(it, R.color.blue)
+            rangePaint.color = chartData.chartColor
         }
     }
 
     //region BaseDrawController
     override fun draw(canvas: Canvas, data: IndexHeatChartDataSet) {
-        drawFrame(canvas)
         drawData(canvas, data)
         drawElementsBounds(canvas, data)
+        drawFrame(canvas)
     }
     //endregion
 
