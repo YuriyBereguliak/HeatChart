@@ -3,16 +3,29 @@ package com.bereguliak.yuriy.hitchart
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import com.by.heatchart.data.index.IndexHeatChartDataEntry
+import com.by.heatchart.data.index.IndexHeatChartDataSet
 import com.by.heatchart.data.range.RangeHeatChartDataSet
 import com.by.heatchart.data.range.RangeHeatChartEntry
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //region AppCompatActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initFirstRangeChart()
+
+        initSecondCustomRangeChart()
+
+        initThirdIndexChart()
+    }
+    //endregion
+
+    //region Utility API
+    private fun initFirstRangeChart() {
         val mutableListFirst = mutableListOf<RangeHeatChartEntry>()
         with(mutableListFirst) {
             add(RangeHeatChartEntry(0, 20))
@@ -28,7 +41,9 @@ class MainActivity : AppCompatActivity() {
             add(RangeHeatChartEntry(88, 100))
         }
         topChartView.dataSet(RangeHeatChartDataSet(rangeData = mutableListFirst))
+    }
 
+    private fun initSecondCustomRangeChart() {
         val mutableListWithColor = mutableListOf<RangeHeatChartEntry>()
         with(mutableListWithColor) {
             add(RangeHeatChartEntry(0, 20))
@@ -46,4 +61,18 @@ class MainActivity : AppCompatActivity() {
 
         secondChart.dataSet(dataSet)
     }
+
+    private fun initThirdIndexChart() {
+        val mutableList = mutableListOf<IndexHeatChartDataEntry>()
+
+        with(mutableList) {
+            add(IndexHeatChartDataEntry(0, 2))
+            add(IndexHeatChartDataEntry(2, 1))
+            add(IndexHeatChartDataEntry(5, 6))
+            add(IndexHeatChartDataEntry(7, 3))
+        }
+
+        indexChartView.dataSet(IndexHeatChartDataSet(10f, mutableList))
+    }
+    //endregion
 }

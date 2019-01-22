@@ -40,4 +40,21 @@
             android:id="@+id/guideline2"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.30"/>
+
+    <com.by.heatchart.view.index.IndexHeatChartView
+            android:id="@+id/indexChartView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline3"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45"/>
 </android.support.constraint.ConstraintLayout>
