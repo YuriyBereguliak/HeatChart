@@ -1,4 +1,4 @@
-package com.by.heatchart.view
+package com.by.heatchart.view.index
 
 /**
  * HitChart

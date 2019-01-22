@@ -1,15 +1,15 @@
-package com.by.heatchart.data
+package com.by.heatchart.data.range
 
 /**
  * HitChart
  * Created by Yuriy Bereguliak on 1/18/19.
  */
-data class HeatChartDataSet(
+data class RangeHeatChartDataSet(
     var parts: Float = 100f,
-    var rangeData: MutableList<HeatChartEntry> = mutableListOf()
+    var rangeData: MutableList<RangeHeatChartEntry> = mutableListOf()
 ) {
 
-    //region HeatChartDataSet
+    //region RangeHeatChartDataSet
     fun assignColorToRanges(color: Int) {
         rangeData.forEach { it.rangeColor = color }
     }

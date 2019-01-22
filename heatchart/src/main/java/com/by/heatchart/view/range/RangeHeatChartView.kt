@@ -1,21 +1,20 @@
-package com.by.heatchart.view
+package com.by.heatchart.view.range
 
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
-import com.by.heatchart.data.HeatChartDataSet
-import com.by.heatchart.core.chart.ChartManager
-import com.by.heatchart.core.chart.RangeHeatChartManager
+import com.by.heatchart.data.range.RangeHeatChartDataSet
+import com.by.heatchart.view.range.manager.RangeHeatDrawManager
 
 /**
- * HeatChart
+ * ChartData
  * Created by Yuriy Bereguliak on 1/18/19.
  */
 class RangeHeatChartView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 
-    private val chartManager: ChartManager by lazy {
-        RangeHeatChartManager(context)
+    private val chartManager by lazy {
+        RangeHeatDrawManager(context)
     }
 
     //region View
@@ -30,15 +29,15 @@ class RangeHeatChartView(context: Context, attrs: AttributeSet? = null) : View(c
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.let {
-            chartManager.drawManager().draw(it)
+            chartManager.draw(it)
         }
     }
     //endregion
 
     //region RangeHeatChartView
-    fun setChartData(dataSet: HeatChartDataSet) {
+    fun setChartData(dataSetRange: RangeHeatChartDataSet) {
         post {
-            chartManager.chartData().dataSet = dataSet
+            chartManager.dataSet(dataSetRange)
             invalidate()
         }
     }

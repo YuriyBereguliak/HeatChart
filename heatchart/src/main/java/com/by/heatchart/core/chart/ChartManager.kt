@@ -1,14 +1,14 @@
 package com.by.heatchart.core.chart
 
-import com.by.heatchart.data.HeatChart
-import com.by.heatchart.manager.draw.DrawManager
+import com.by.heatchart.data.ChartData
+import com.by.heatchart.core.manager.DrawManager
 
 /**
- * HeatChart
+ * ChartData
  * Created by Yuriy Bereguliak on 1/18/19.
  */
-interface ChartManager {
-    fun chartData(): HeatChart
+interface ChartManager<T> {
+    fun chartData(): ChartData
 
-    fun drawManager(): DrawManager
+    fun drawManager(): DrawManager<T>
 }
