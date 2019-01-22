@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference
 abstract class BaseDrawController<in T>(context: Context, private val chartData: ChartData) : DrawController<T> {
 
     protected val contextReference = WeakReference(context)
-    protected var framePaint = Paint()
+    private var framePaint = Paint()
 
     init {
         contextReference.get()?.let {

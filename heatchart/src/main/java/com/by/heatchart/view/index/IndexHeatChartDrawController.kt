@@ -18,9 +18,17 @@ class IndexHeatChartDrawController(context: Context, private var chartData: Char
     BaseDrawController<IndexHeatChartDataSet>(context, chartData) {
 
     private var rangePaint = Paint()
+    private var borderPaint = Paint()
 
     init {
         contextReference.get()?.let {
+            val res = it.resources
+
+            borderPaint.style = Paint.Style.STROKE
+            borderPaint.isAntiAlias = true
+            borderPaint.strokeWidth = res.getDimension(R.dimen.frame_border_width)
+            borderPaint.color = ContextCompat.getColor(it, R.color.gray_400)
+
             rangePaint.style = Paint.Style.FILL
             rangePaint.isAntiAlias = true
             rangePaint.color = ContextCompat.getColor(it, R.color.blue)
@@ -31,10 +39,20 @@ class IndexHeatChartDrawController(context: Context, private var chartData: Char
     override fun draw(canvas: Canvas, data: IndexHeatChartDataSet) {
         drawFrame(canvas)
         drawData(canvas, data)
+        drawElementsBounds(canvas, data)
     }
     //endregion
 
     //region Utility API
+    private fun drawElementsBounds(canvas: Canvas, data: IndexHeatChartDataSet) {
+        val minPartWidth = chartData.calculateMinPart(data.parts)
+
+        for (i in 0..data.parts.toInt()) {
+            val left = i * minPartWidth + minPartWidth
+            canvas.drawLines(floatArrayOf(left, 0f, left, chartData.height.toFloat()), borderPaint)
+        }
+    }
+
     private fun drawData(canvas: Canvas, data: IndexHeatChartDataSet) {
         val minPartWidth = chartData.calculateMinPart(data.parts)
 
@@ -57,8 +75,5 @@ class IndexHeatChartDrawController(context: Context, private var chartData: Char
             }
         }
     }
-
-//    canvas.drawLines(floatArrayOf(rect.left + minPartWidth, rect.top, rect.right, rect.bottom), framePaint)
-
     //endregion
 }
